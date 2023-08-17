@@ -3,46 +3,57 @@
 <head>
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script src="js/scripts.js"></script>
-  <title>Character Creator</title>
+  <title>Character Generator</title>
 </head>
 <body>
-  <h1 class="title">Character Creator</h1>
-  <h3>Generate a wacky individual!</h3>
+  <h1 class="title">Character Generator</h1>
+  <h3>Create a wacky individual!</h3>
 
   <form id="form"> 
-    <label for="animalInput">Character Name</label><br>
-    <input id="animalInput" type="text" name="animalInput">
+    <label for="charName">Character Name</label><br>
+    <input id="charName" type="text" name="charName">
     
     <p>Soul Type</p>
-    <select id="???">
-      <option>???</option>
-      <option>???</option>
-      <option>???</option>
-      <option value="???">???</option>
+    <select id="charSoul">
+      <option value="dom">Domination</option>
+      <option value="end">Endless</option>
+      <option value="enl">Enlightened</option>
+      <option value="tor">Tormented</option>
+      <option value="bla">Blank</option>
+      <option value="car">Caressing</option>
+      <option value="cha">Changeling</option>
+      <option value="dec">Decrepit</option>
+      <option value="hea">Heartless</option>
+      <option value="lat">Latent</option>
+      <option value="rad">Radiating</option>
+      <option value="sha">Shadowed</option>
+      <option value="sol">Solitary</option>
+      <option value="suf">Suffocated</option>
+      <option value="tai">Tainted</option>
     </select>
     
-    <p>Skills</p>
-    <input type="radio" name="skill" value="chocolate" id="choc" checked>
-    <label for="choc">Chocolate</label><br>
-    <input type="radio" name="skill" value="vanilla" id="van">
-    <label for="van">Vanilla</label><br>
-    <input type="radio" name="skill" value="cookies and cream" id="cookies">
-    <label for="cookies">Cookies & Cream</label>
+    <p>Skill</p>
+    <input type="radio" name="skill" value="power" id="str" checked>
+    <label for="str">Power</label><br>
+    <input type="radio" name="skill" value="wits" id="int">
+    <label for="int">Wits</label><br>
+    <input type="radio" name="skill" value="personality" id="cha">
+    <label for="cha">Personality</label>
     
     <p>Weakness</p>
-    <input type="radio" name="weakness" value="chocolate" id="inputA" checked>
-    <label for="inputA">Chocolate</label><br>
-    <input type="radio" name="weakness" value="vanilla" id="inputB">
-    <label for="inputB">Vanilla</label><br>
-    <input type="radio" name="weakness" value="cookies and cream" id="inputC">
-    <label for="inputC">Cookies & Cream </label>
+    <input type="radio" name="weakness" value="sickly" id="conNeg" checked>
+    <label for="conNeg">Sickly</label><br>
+    <input type="radio" name="weakness" value="naive" id="wisNeg">
+    <label for="wisNeg">Naïve</label><br>
+    <input type="radio" name="weakness" value="Impetuous" id="dexNeg">
+    <label for="dexNeg">Impetuous</label>
     <br><br>
 
     <label for="born">Date of birth:</label><br>
     <input id="born" type="date">
     <br><br>
 
-    <label for="color">What is your favorite color?</label><br>
+    <label for="color">Associated Color:</label><br>
     <input id="color" type="color">
     <br><br>
 
