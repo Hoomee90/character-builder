@@ -22,18 +22,18 @@ Tainted - brawling
 // Ability + Weakness: Useful power, and how your weakness keeps you from taking full advantage of it
 
 /* DoB: Lifelong Struggle
-Aries March 21 - April 19
-Taurus April 20 – May 20
-Gemini May 21- June 21
-Cancer June 22- July 22
-Leo July 23 – August 22
-Virgo August 23 – September 22
-Libra September 23 – October 23
-Scorpio October 24 – November 21
-Sagittarius November 22 – December 21
-Capricorn December 22 – January 19
-Aquarius January 20 – February 18
-Pisces February 19 – March 20
+Aries March 21 - April 19 - unnecessary suffering
+Taurus April 20 – May 20 - vacant directionlessness
+Gemini May 21- June 21 - bitter nihilism
+Cancer June 22- July 22 - overwhelming self-doubt
+Leo July 23 – August 22 - unhealthy attachments
+Virgo August 23 – September 22 - lonely isolation 
+Libra September 23 – October 23 - genuine expression
+Scorpio October 24 – November 21 - ambition and hubris
+Sagittarius November 22 – December 21 - impotent irrelevance 
+Capricorn December 22 – January 19 - excessive inhibitions
+Aquarius January 20 – February 18 - unwavering stubbornness
+Pisces February 19 – March 20 - blinding idolization
 */
 
 /* Color: Personality
