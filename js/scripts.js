@@ -56,29 +56,44 @@ XX00xx - exuberant and rollicking
 
 const thresholds = [85, 170, 255];
 
-const colors = [
-  [255, 0, 0]
-];
-
 function getRange(value) {
   if (value <= thresholds[0]) return "low";
   if (value <= thresholds[1]) return "med";
   if (value <= thresholds[2]) return "high";
 }
 
-function getColorBucket(r, g, b) {
-  const rRange = getRange(r)
-  const gRange = getRange(g)
-  const bRange = getRange(b)
+function getColorBucket(RGB) {
+  const [r, g, b] = RGB;
+  const rRange = getRange(r);
+  const gRange = getRange(g);
+  const bRange = getRange(b);
 
   return rRange + "-" + gRange + "-" + bRange;
 }
 
-function colorSubmissionHandler() {
-  for (const color of colors) {
-    const bucket = getColorBucket(...color);
-    console.log("color " + color + " is in bucket " + bucket);
-  }
+function hexToRGB(hex) {
+  hex = hex.slice(1);
+  const parsedHex = parseInt(hex, 16);
+  const r = (parsedHex >> 16) & 255;
+  const g = (parsedHex >> 8) & 255;
+  const b = parsedHex & 255;
+  
+  return [r, g, b];
 }
 
-colorSubmissionHandler();
+function colorSubmissionHandler(colorHEX) {
+  const colorRGB = hexToRGB(colorHEX);
+  const colorBucket = getColorBucket(colorRGB);
+  console.log(colorBucket);
+}
+
+window.addEventListener("load", function() {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const colorInput = document.querySelector("#color").value;
+
+    colorSubmissionHandler(colorInput);
+  });
+});
