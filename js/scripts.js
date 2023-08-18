@@ -1,16 +1,16 @@
 // Name: Name, dunkass
 
 /* Soul Type: Skills
-Domination
+Domination - tactics
 Endless - persuasion
 Enlightened - magic
 Tormented - history
 Blank - medicine
 Caressing - mechanics
-Chaotic - commanding
+Chaotic - leadership
 Changeling - occultism
 Decrepit - thievery
-Heartless - wealth
+Heartless - being wealthy
 Latent - a little bit of everything
 Radiating - instincts
 Shadowed - botany
@@ -53,3 +53,32 @@ xx00XX - whimsical and relaxed
 XX00XX - imperious and arrogant
 XX00xx - exuberant and rollicking
 */
+
+const thresholds = [85, 170, 255];
+
+const colors = [
+  [255, 0, 0]
+];
+
+function getRange(value) {
+  if (value <= thresholds[0]) return "low";
+  if (value <= thresholds[1]) return "med";
+  if (value <= thresholds[2]) return "high";
+}
+
+function getColorBucket(r, g, b) {
+  const rRange = getRange(r)
+  const gRange = getRange(g)
+  const bRange = getRange(b)
+
+  return rRange + "-" + gRange + "-" + bRange;
+}
+
+function colorSubmissionHandler() {
+  for (const color of colors) {
+    const bucket = getColorBucket(...color);
+    console.log("color " + color + " is in bucket " + bucket);
+  }
+}
+
+colorSubmissionHandler();
