@@ -18,6 +18,22 @@ Pisces February 19 – March 20":"blinding idolization
 
 */
 
+function strengthWeakSubmissionHandler(strength, weakness) {
+  const strengthText = {
+    "power":"You possess the power to enact your will on the world. Whether it be through brute strength, equipment, or connections you have a leg up compared to other people in simply getting things done.",
+    "wits":"You possess the wits to discover, deconstruct and outsmart the world. Your quick-acting mind and extensive knowledge combine to make a formidable mental force.",
+    "personality":"You possess the personality to make easy allies, speak with power, and stand strong against any words thrown your way. You know who you are, what you stand for, what you want and nothing and nobody will shake your foundations."
+  };
+
+  const weaknessText = {
+    "sickly": "You possess ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at just the worst times. They drain you, which can make utilizing your strengths a difficult thing.",
+    "naive": "You lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggling to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
+    "impetuous": "You are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your "
+  };
+  
+  console.log(strength, weakness);
+}
+
 function soulSubmissionHandler(soulType) {
   const soulSkill = {
     "dom":"leadership",
@@ -139,7 +155,10 @@ window.addEventListener("load", function() {
     const colorInput = document.querySelector("#color").value;
     const dateInput = document.querySelector("#born").value;
     const soulInput = document.querySelector("#soul").value;
+    const strengthInput = document.querySelector("input[name=ability]:checked").value;
+    const weaknessInput = document.querySelector("input[name=weakness]:checked").value;
     
+    strengthWeakSubmissionHandler(strengthInput, weaknessInput)
     dateSubmissionHandler(dateInput);
     colorSubmissionHandler(colorInput);
     soulSubmissionHandler(soulInput);
