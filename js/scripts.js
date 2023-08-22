@@ -154,13 +154,13 @@ window.addEventListener("load", function() {
     const nameInput = document.querySelector("#name").value;
     const errorMsg = document.querySelector("#errorMsg")
 
-    nameSubmissionHandler(nameInput);
-    strengthWeakSubmissionHandler(strengthInput, weaknessInput);
-    dateSubmissionHandler(dateInput);
-    colorSubmissionHandler(colorInput);
-    soulSubmissionHandler(soulInput);
-
     if (allFieldsFilledCheck()) {
+      nameSubmissionHandler(nameInput);
+      strengthWeakSubmissionHandler(strengthInput, weaknessInput);
+      dateSubmissionHandler(dateInput);
+      colorSubmissionHandler(colorInput);
+      soulSubmissionHandler(soulInput);
+
       document.querySelector("#charSheet").classList.remove("hidden");
       errorMsg.classList.add("hidden");
     } 
