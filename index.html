@@ -11,10 +11,10 @@
 
   <form> 
     <label for="name">Character Name</label><br>
-    <input id="name" type="text" name="name">
+    <input id="name" type="text" name="name" class="singleLineInput">
     
     <p>Looking back, your character would describe their past as:</p>
-    <select id="soul">
+    <select id="soul" class="singleLineInput">
       <option value="dom">Dominating</option>
       <option value="end">Endless</option>
       <option value="enl">Enlightened</option>
@@ -33,15 +33,15 @@
       <option value="tai">Tainted</option>
     </select>
     
-    <p>Strength:</p>
+    <p>Strength:</p><br>
     <input type="radio" name="ability" value="power" id="str" checked>
     <label for="str">Power</label><br>
     <input type="radio" name="ability" value="wits" id="int">
     <label for="int">Wits</label><br>
     <input type="radio" name="ability" value="personality" id="cha">
-    <label for="cha">Personality</label>
+    <label for="cha">Personality</label><br>
     
-    <p>Weakness:</p>
+    <p>Weakness:</p><br>
     <input type="radio" name="weakness" value="sickly" id="conNeg" checked>
     <label for="conNeg">Sickly</label><br>
     <input type="radio" name="weakness" value="naive" id="wisNeg">
@@ -51,11 +51,11 @@
     <br><br>
 
     <label for="born">Date of birth:</label><br>
-    <input id="born" type="date">
+    <input id="born" type="date" class="singleLineInput">
     <br><br>
 
     <label for="color">Associated Color:</label><br>
-    <input id="color" type="color">
+    <input id="color" type="color" class="singleLineInput">
     <br><br>
 
     <button type="submit">Submit Character</button>

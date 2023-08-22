@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: #f2f3f7;
+  padding: 2rem 5%;
+}
+
+.title {
+  color: #343a40;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6c757d;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label, p {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.singleLineInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
