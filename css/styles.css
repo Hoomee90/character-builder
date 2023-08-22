@@ -23,8 +23,8 @@ h3 {
 }
 
 #errorMsg {
-  justify-content: left;
-  margin-bottom: 2rem;
+  width: 100%;
+  margin-top: 1rem;
   color: rgba(255, 0, 0, 0.8);
 }
 
@@ -33,7 +33,7 @@ h3 {
   justify-content: space-between;
 }
 
-form, #charSheet {
+.left-half, #charSheet {
   width: 48%;
   box-sizing: border-box;
 }

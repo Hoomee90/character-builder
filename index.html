@@ -8,58 +8,60 @@
 <body>
   <h1 class="title">Character Generator</h1>
   <h3>Create a wacky individual!</h3>
-  <h2 id="errorMsg" class="hidden">Please fill out all areas of the Generator</h2>
-
+  
   <div class="container">
-    <form> 
-      <label for="name">Character Name</label>
-      <input id="name" type="text" name="name" class="singleLineInput">
-      
-      <p>Looking back, your character would describe their past as:</p>
-      <select id="soul" class="singleLineInput">
-        <option value="dom">Dominating</option>
-        <option value="end">Endless</option>
-        <option value="enl">Enlightened</option>
-        <option value="tor">Tormented</option>
-        <option value="bla">Blank</option>
-        <option value="car">Caressing</option>
-        <option value="cha">Changelingish</option>
-        <option value="cho">Chaotic</option>
-        <option value="dec">Decrepit</option>
-        <option value="hea">Heartless</option>
-        <option value="lat">Latent</option>
-        <option value="rad">Radiating</option>
-        <option value="sha">Shadowed</option>
-        <option value="sol">Solitary</option>
-        <option value="suf">Suffocated</option>
-        <option value="tai">Tainted</option>
-      </select>
-      
-      <p>Strength:</p><br>
-      <input type="radio" name="ability" value="power" id="str" checked>
-      <label for="str">Power</label><br>
-      <input type="radio" name="ability" value="wits" id="int">
-      <label for="int">Wits</label><br>
-      <input type="radio" name="ability" value="personality" id="cha">
-      <label for="cha">Ego</label><br><br>
-      
-      <p>Weakness:</p><br>
-      <input type="radio" name="weakness" value="sickly" id="conNeg" checked>
-      <label for="conNeg">Sickly</label><br>
-      <input type="radio" name="weakness" value="naive" id="wisNeg">
-      <label for="wisNeg">Naïve</label><br>
-      <input type="radio" name="weakness" value="impetuous" id="dexNeg">
-      <label for="dexNeg">Impetuous</label><br><br>
+    <div class="left-half">
+      <form> 
+        <label for="name">Character Name</label>
+        <input id="name" type="text" name="name" class="singleLineInput">
+        
+        <p>Looking back, your character would describe their past as:</p>
+        <select id="soul" class="singleLineInput">
+          <option value="dom">Dominating</option>
+          <option value="end">Endless</option>
+          <option value="enl">Enlightened</option>
+          <option value="tor">Tormented</option>
+          <option value="bla">Blank</option>
+          <option value="car">Caressing</option>
+          <option value="cha">Changelingish</option>
+          <option value="cho">Chaotic</option>
+          <option value="dec">Decrepit</option>
+          <option value="hea">Heartless</option>
+          <option value="lat">Latent</option>
+          <option value="rad">Radiating</option>
+          <option value="sha">Shadowed</option>
+          <option value="sol">Solitary</option>
+          <option value="suf">Suffocated</option>
+          <option value="tai">Tainted</option>
+        </select>
+        
+        <p>Strength:</p><br>
+        <input type="radio" name="ability" value="power" id="str" checked>
+        <label for="str">Power</label><br>
+        <input type="radio" name="ability" value="wits" id="int">
+        <label for="int">Wits</label><br>
+        <input type="radio" name="ability" value="personality" id="cha">
+        <label for="cha">Ego</label><br><br>
+        
+        <p>Weakness:</p><br>
+        <input type="radio" name="weakness" value="sickly" id="conNeg" checked>
+        <label for="conNeg">Sickly</label><br>
+        <input type="radio" name="weakness" value="naive" id="wisNeg">
+        <label for="wisNeg">Naïve</label><br>
+        <input type="radio" name="weakness" value="impetuous" id="dexNeg">
+        <label for="dexNeg">Impetuous</label><br><br>
 
-      <label for="born">Date of birth:</label><br>
-      <input id="born" type="date" class="singleLineInput">
+        <label for="born">Character's birthday:</label><br>
+        <input id="born" type="date" class="singleLineInput">
 
-      <label for="color">Associated Color:</label><br>
-      <input id="color" type="color" class="singleLineInput">
+        <label for="color">Associated Color:</label><br>
+        <input id="color" type="color" class="singleLineInput">
 
-      <button type="submit">Submit Character</button>
-    </form>
-    
+        <button type="submit">Submit Character</button>
+      </form>
+      <h2 id="errorMsg" class="hidden">Please fill out all areas of the Generator</h2>
+    </div>
+
     <div id="charSheet" class="hidden">
       <h2 class="sheetText" id="charName">_</h2>
       <p class="sheetText">You are a <span id="charPersona" class="sheetBlank">_</span> individual, talented in <span id="charTalent" class="sheetBlank">_</span>.</p>
