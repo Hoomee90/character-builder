@@ -7,12 +7,12 @@ function strengthWeakSubmissionHandler(strength, weakness) {
   const strengthText = {
     "power":"You possess the power to enact your will on the world. Whether it be through brute strength, equipment, or connections you have a leg up compared to other people in simply getting things done.",
     "wits":"You possess the wits to discover, deconstruct and outsmart the world. Your quick-acting mind and extensive knowledge combine to make a formidable mental force.",
-    "personality":"You possess the personality to attract people to you, speak with power, and stand strong against any words thrown your way. You know who you are, what you stand for, what you want and nothing and nobody will shake your foundations."
+    "personality":"You possess the self-assuredness to gather people around you, speak with power, and stand strong against any words thrown your way. You know who you are, what you stand for, and what you want, and nothing and nobody will shake your foundations."
   };
 
   const weaknessText = {
-    "sickly": "you possess ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at just the worst times. They drain you, which can make utilizing your strengths a difficult thing.",
-    "naive": "you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggling to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
+    "sickly": "you suffer from ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at the worst possible times. They drain you, which can make utilizing your strengths a difficult thing.",
+    "naive": "you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggle to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
     "impetuous": "you are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your strengths are put to poorly thought-out or perhaps even destructive ways."
   };
   document.querySelector("#charStrength").innerText = strengthText[strength];
@@ -28,7 +28,7 @@ function soulSubmissionHandler(soulType) {
     "bla":"medicine",
     "car":"mechanics",
     "cho":"athletics",
-    "cha":"religion or occultism",
+    "cha":"religion and occultism",
     "dec":"thievery",
     "hea":"being filthy rich",
     "lat":"a little bit of everything",
@@ -134,6 +134,13 @@ function colorSubmissionHandler(colorHEX) {
   document.querySelector("#charPersona").innerText = bucketPersona[colorBucket];
 }
 
+function allFieldsFilledCheck() {
+  if (document.querySelector("#born").value && document.querySelector("#name").value) {
+    return true;
+  }
+}
+
+
 window.addEventListener("load", function() {
   const form = document.querySelector("form");
 
@@ -145,11 +152,20 @@ window.addEventListener("load", function() {
     const strengthInput = document.querySelector("input[name=ability]:checked").value;
     const weaknessInput = document.querySelector("input[name=weakness]:checked").value;
     const nameInput = document.querySelector("#name").value;
-    
+    const errorMsg = document.querySelector("#errorMsg")
+
     nameSubmissionHandler(nameInput);
     strengthWeakSubmissionHandler(strengthInput, weaknessInput);
     dateSubmissionHandler(dateInput);
     colorSubmissionHandler(colorInput);
     soulSubmissionHandler(soulInput);
+
+    if (allFieldsFilledCheck()) {
+      document.querySelector("#charSheet").classList.remove("hidden");
+      errorMsg.classList.add("hidden");
+    } 
+    else {
+      errorMsg.classList.remove("hidden");
+    }  
   });
 });
