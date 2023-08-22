@@ -1,6 +1,6 @@
 function nameSubmissionHandler(name) {
   const nameCaps = name.toUpperCase();
-  console.log("Your name is " + nameCaps + ".");
+  document.querySelector("#charName").innerText = "Your name is " + nameCaps;
 }
 
 function strengthWeakSubmissionHandler(strength, weakness) {
@@ -11,12 +11,12 @@ function strengthWeakSubmissionHandler(strength, weakness) {
   };
 
   const weaknessText = {
-    "sickly": "However, you possess ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at just the worst times. They drain you, which can make utilizing your strengths a difficult thing.",
-    "naive": "However, you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggling to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
-    "impetuous": "However, you are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your strengths are put to poorly thought-out or perhaps even destructive ways."
+    "sickly": "you possess ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at just the worst times. They drain you, which can make utilizing your strengths a difficult thing.",
+    "naive": "you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggling to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
+    "impetuous": "you are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your strengths are put to poorly thought-out or perhaps even destructive ways."
   };
-  
-  console.log(strengthText[strength], weaknessText[weakness]);
+  document.querySelector("#charStrength").innerText = strengthText[strength];
+  document.querySelector("#charWeakness").innerText = weaknessText[weakness];
 }
 
 function soulSubmissionHandler(soulType) {
@@ -38,7 +38,7 @@ function soulSubmissionHandler(soulType) {
     "suf":"cooking",
     "tai":"brawling"
   };
-  console.log("You are talented in " + soulSkill[soulType]);
+  document.querySelector("#charTalent").innerText = soulSkill[soulType];
 }
 
 function dateSubmissionHandler(dateString) {
@@ -64,7 +64,7 @@ function dateSubmissionHandler(dateString) {
 
   //procedurally finds the key associated with the value equal to 'true'
   for (let sign in zodiacStruggle) {
-    if (zodiacStruggle[sign]()) console.log("Your struggle is " + sign);
+    if (zodiacStruggle[sign]()) document.querySelector("#charStruggle").innerText = sign;
   }
 }
 
@@ -131,7 +131,7 @@ function colorSubmissionHandler(colorHEX) {
     "med-low-low": "exuberant and rollicking"
   };
   
-  console.log("Your personality tends to be " + bucketPersona[colorBucket]);
+  document.querySelector("#charPersona").innerText = bucketPersona[colorBucket];
 }
 
 window.addEventListener("load", function() {
