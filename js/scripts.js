@@ -1,22 +1,7 @@
-// Name: Name, dunkass
-
-// Ability + Weakness: Useful power, and how your weakness keeps you from taking full advantage of it
-
-/* DoB: Lifelong Struggle DONE
-Aries March 21":"April 19":"unnecessary suffering
-Taurus April 20 – May 20":"vacant directionlessness
-Gemini May 21- June 21":"bitter nihilism
-Cancer June 22- July 22":"overwhelming self-doubt
-Leo July 23 – August 22":"codependent attachments
-Virgo August 23 – September 22":"lonely isolation
-Libra September 23 – October 23":"compulsive insincerity
-Scorpio October 24 – November 21":"hubristic ambition
-Sagittarius November 22 – December 21":"ineffective irrelevance
-Capricorn December 22 – January 19":"excessive restrictions
-Aquarius January 20 – February 18":"unwavering stubbornness
-Pisces February 19 – March 20":"blinding idolization
-
-*/
+function nameSubmissionHandler(name) {
+  const nameCaps = name.toUpperCase();
+  console.log("Your name is " + nameCaps + ".");
+}
 
 function strengthWeakSubmissionHandler(strength, weakness) {
   const strengthText = {
@@ -159,8 +144,10 @@ window.addEventListener("load", function() {
     const soulInput = document.querySelector("#soul").value;
     const strengthInput = document.querySelector("input[name=ability]:checked").value;
     const weaknessInput = document.querySelector("input[name=weakness]:checked").value;
+    const nameInput = document.querySelector("#name").value;
     
-    strengthWeakSubmissionHandler(strengthInput, weaknessInput)
+    nameSubmissionHandler(nameInput);
+    strengthWeakSubmissionHandler(strengthInput, weaknessInput);
     dateSubmissionHandler(dateInput);
     colorSubmissionHandler(colorInput);
     soulSubmissionHandler(soulInput);
