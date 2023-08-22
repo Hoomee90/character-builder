@@ -22,6 +22,16 @@ h3 {
   color: #6c757d;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+form, #charSheet {
+  width: 48%;
+  box-sizing: border-box;
+}
+
 form {
   background-color: #ffffff;
   padding: 2rem;
@@ -37,8 +47,34 @@ label, p {
 
 .singleLineInput {
   width: 100%;
+  height: 3em;
   padding: 0.5rem;
   border: 1px solid #ced4da;
   border-radius: 4px;
   margin-bottom: 1.5rem;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+
+}
+
+.sheetText {
+  margin-bottom: 1rem;
+}
+
+.sheetBlank {
+  font-weight: bold;
+  color: #007bff;
 }
