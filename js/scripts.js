@@ -7,7 +7,7 @@ Aries March 21":"April 19":"unnecessary suffering
 Taurus April 20 – May 20":"vacant directionlessness
 Gemini May 21- June 21":"bitter nihilism
 Cancer June 22- July 22":"overwhelming self-doubt
-Leo July 23 – August 22":"unhealthy attachment
+Leo July 23 – August 22":"codependent attachments
 Virgo August 23 – September 22":"lonely isolation
 Libra September 23 – October 23":"compulsive insincerity
 Scorpio October 24 – November 21":"hubristic ambition
@@ -22,16 +22,16 @@ function strengthWeakSubmissionHandler(strength, weakness) {
   const strengthText = {
     "power":"You possess the power to enact your will on the world. Whether it be through brute strength, equipment, or connections you have a leg up compared to other people in simply getting things done.",
     "wits":"You possess the wits to discover, deconstruct and outsmart the world. Your quick-acting mind and extensive knowledge combine to make a formidable mental force.",
-    "personality":"You possess the personality to make easy allies, speak with power, and stand strong against any words thrown your way. You know who you are, what you stand for, what you want and nothing and nobody will shake your foundations."
+    "personality":"You possess the personality to attract people to you, speak with power, and stand strong against any words thrown your way. You know who you are, what you stand for, what you want and nothing and nobody will shake your foundations."
   };
 
   const weaknessText = {
-    "sickly": "You possess ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at just the worst times. They drain you, which can make utilizing your strengths a difficult thing.",
-    "naive": "You lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggling to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
-    "impetuous": "You are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your "
+    "sickly": "However, you possess ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at just the worst times. They drain you, which can make utilizing your strengths a difficult thing.",
+    "naive": "However, you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggling to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
+    "impetuous": "However, you are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your strengths are put to poorly thought-out or perhaps even destructive ways."
   };
   
-  console.log(strength, weakness);
+  console.log(strengthText[strength], weaknessText[weakness]);
 }
 
 function soulSubmissionHandler(soulType) {
@@ -43,7 +43,7 @@ function soulSubmissionHandler(soulType) {
     "bla":"medicine",
     "car":"mechanics",
     "cho":"athletics",
-    "cha":"occultism",
+    "cha":"religion or occultism",
     "dec":"thievery",
     "hea":"being filthy rich",
     "lat":"a little bit of everything",
@@ -53,15 +53,16 @@ function soulSubmissionHandler(soulType) {
     "suf":"cooking",
     "tai":"brawling"
   };
-  console.log(soulSkill[soulType]);
+  console.log("You are talented in " + soulSkill[soulType]);
 }
 
 function dateSubmissionHandler(dateString) {
   const date = new Date(dateString);
   const day = date.getDate();
-  const month = date.getUTCMonth() + 1;
+  const month = date.getMonth() + 1;
   //dictionary for how zodiacs relate to lifelong struggles
   const zodiacStruggle = {
+    //values are no-parameter arrow function expressions returning true based on the inputted date
     "excessive restrictions": () => (month == 12 && day >= 22) || (month == 1 && day <= 19),
     "unwavering stubbornness": () => (month == 1 && day >= 20) || (month == 2 && day <= 18),
     "blinding idolization": () => (month == 2 && day >= 19) || (month == 3 && day <= 20),
@@ -69,15 +70,16 @@ function dateSubmissionHandler(dateString) {
     "vacant directionlessness": () => (month == 4 && day >= 20) || (month == 5 && day <= 20),
     "bitter nihilism": () => (month == 5 && day >= 21) || (month == 6 && day <= 20),
     "overwhelming self-doubt": () => (month == 6 && day >= 21) || (month == 7 && day <= 22),
-    "unhealthy attachment": () => (month == 7 && day >= 23) || (month == 8 && day <= 22),
+    "codependent attachments": () => (month == 7 && day >= 23) || (month == 8 && day <= 22),
     "lonely isolation": () => (month == 8 && day >= 23) || (month == 9 && day <= 22),
     "compulsive insincerity": () => (month == 9 && day >= 23) || (month == 10 && day <= 22),
     "hubristic ambition": () => (month == 10 && day >= 23) || (month == 11 && day <= 21),
     "ineffective irrelevance": () => (month == 11 && day >= 22) || (month == 12 && day <= 21),
   };
 
+  //procedurally finds the key associated with the value equal to 'true'
   for (let sign in zodiacStruggle) {
-    if (zodiacStruggle[sign]()) console.log(sign);
+    if (zodiacStruggle[sign]()) console.log("Your struggle is " + sign);
   }
 }
 
@@ -144,7 +146,7 @@ function colorSubmissionHandler(colorHEX) {
     "med-low-low": "exuberant and rollicking"
   };
   
-  console.log(bucketPersona[colorBucket]);
+  console.log("Your personality tends to be " + bucketPersona[colorBucket]);
 }
 
 window.addEventListener("load", function() {
