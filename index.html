@@ -40,7 +40,7 @@
       <input type="radio" name="ability" value="wits" id="int">
       <label for="int">Wits</label><br>
       <input type="radio" name="ability" value="personality" id="cha">
-      <label for="cha">Personality</label><br><br>
+      <label for="cha">Ego</label><br><br>
       
       <p>Weakness:</p><br>
       <input type="radio" name="weakness" value="sickly" id="conNeg" checked>
@@ -48,8 +48,7 @@
       <input type="radio" name="weakness" value="naive" id="wisNeg">
       <label for="wisNeg">Naïve</label><br>
       <input type="radio" name="weakness" value="impetuous" id="dexNeg">
-      <label for="dexNeg">Impetuous</label>
-      <br><br>
+      <label for="dexNeg">Impetuous</label><br><br>
 
       <label for="born">Date of birth:</label><br>
       <input id="born" type="date" class="singleLineInput">
@@ -63,8 +62,9 @@
     <div id="charSheet" class="hidden">
       <h2 class="sheetText" id="charName">_</h2>
       <p class="sheetText">You are a <span id="charPersona" class="sheetBlank">_</span> individual, talented in <span id="charTalent" class="sheetBlank">_</span>.</p>
-      <p class="sheetText"><span id="charStrength">_</span><strong> However, </strong><span id="charWeakness">_</span></p>
-      <p class="sheetText">Your fundamental struggle is your <span id="carStruggle" class="sheetBlank">_</span>.</p>
+      <p class="sheetText"><span id="charStrength">_</span></p>
+      <p><strong> However, </strong><span id="charWeakness">_</span></p>
+      <p class="sheetText">Your fundamental struggle is your <span id="charStruggle" class="sheetBlank">_</span>.</p>
     </div>
   </div>
 </body>
