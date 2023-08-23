@@ -12,7 +12,7 @@ function strengthWeakSubmissionHandler(strength, weakness) {
 
   const weaknessText = {
     "sickly": "you suffer from ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at the worst possible times. They drain you, which can make utilizing your strengths a difficult thing.",
-    "naive": "you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggle to make decisions with all the limited information you have. Or perhaps you are completely obvious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
+    "naive": "you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggle to make decisions with all the limited information you have. Or perhaps you are completely oblivious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
     "impetuous": "you are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your strengths are put to poorly thought-out or perhaps even destructive ways."
   };
   document.querySelector("#charStrength").innerText = strengthText[strength];
@@ -23,8 +23,8 @@ function soulSubmissionHandler(soulType) {
   const soulSkill = {
     "dom":"leadership",
     "end":"persuasion",
-    "enl":"magic",
-    "tor":"history",
+    "enl":"history",
+    "tor":"survival skills",
     "bla":"medicine",
     "car":"mechanics",
     "cho":"athletics",
@@ -139,7 +139,6 @@ function allFieldsFilledCheck() {
     return true;
   }
 }
-
 
 window.addEventListener("load", function() {
   const form = document.querySelector("form");
