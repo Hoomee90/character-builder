@@ -2,7 +2,9 @@
 
 #### By **Samantha Callie**
 
-#### A form for generating simple general character profiles 
+#### A form for generating simple general character profiles
+
+### [See it here](https://hoomee90.github.io/character-builder/)
 
 ## Technologies Used
 
