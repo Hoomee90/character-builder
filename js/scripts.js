@@ -11,8 +11,8 @@ function strengthWeakSubmissionHandler(strength, weakness) {
   };
 
   const weaknessText = {
-    "sickly": "you suffer from ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at the worst possible times. They drain you, which can make utilizing your strengths a difficult thing.",
-    "naive": "you lack understanding in how the world works. You often feel you are out of your depth, easy to mislead, and struggle to make decisions with all the limited information you have. Or perhaps you are completely oblivious to any of these things, unaware of how they may bar you from utilizing your strengths in ways that effectively support your goals.",
+    "sickly": "you suffer from ailments or difficulties of the body or mind. These things limit your options in life and can knock you down at the worst possible times. They drain you, which can make utilizing your strengths effectively a difficult thing.",
+    "naive": "you lack understanding in how the world works. You are easy to mislead, often feel out of your depth, and struggle to make decisions with the limited information you have. Or perhaps you are completely oblivious to any of these things, unaware of how they may bar you from utilizing your strengths to accurately work towards your goals.",
     "impetuous": "you are impulsive, spontaneous and perhaps even bullheaded. You tend to make and run with your own plans, no matter how incomplete they are. Your quick emotions and hasty decisions often mean your strengths are put to poorly thought-out or perhaps even destructive ways."
   };
   document.querySelector("#charStrength").innerText = strengthText[strength];
@@ -32,7 +32,7 @@ function soulSubmissionHandler(soulType) {
     "dec":"thievery",
     "hea":"being filthy rich",
     "lat":"a little bit of everything",
-    "rad":"reading people",
+    "rad":"observation",
     "sha":"botany",
     "sol":"weapons",
     "suf":"cooking",
@@ -48,7 +48,7 @@ function dateSubmissionHandler(dateString) {
   //dictionary for how zodiacs relate to lifelong struggles
   const zodiacStruggle = {
     //values are no-parameter arrow function expressions returning true based on the inputted date
-    "excessive restrictions": () => (month == 12 && day >= 22) || (month == 1 && day <= 19),
+    "excessive inhibitions": () => (month == 12 && day >= 22) || (month == 1 && day <= 19),
     "unwavering stubbornness": () => (month == 1 && day >= 20) || (month == 2 && day <= 18),
     "blinding idolization": () => (month == 2 && day >= 19) || (month == 3 && day <= 20),
     "unnecessary suffering": () => (month == 3 && day >= 21) || (month == 4 && day <= 19),
@@ -56,8 +56,8 @@ function dateSubmissionHandler(dateString) {
     "bitter nihilism": () => (month == 5 && day >= 21) || (month == 6 && day <= 20),
     "overwhelming self-doubt": () => (month == 6 && day >= 21) || (month == 7 && day <= 22),
     "codependent attachments": () => (month == 7 && day >= 23) || (month == 8 && day <= 22),
-    "lonely isolation": () => (month == 8 && day >= 23) || (month == 9 && day <= 22),
-    "compulsive insincerity": () => (month == 9 && day >= 23) || (month == 10 && day <= 22),
+    "oppressive isolation": () => (month == 8 && day >= 23) || (month == 9 && day <= 22),
+    "compulsive masking": () => (month == 9 && day >= 23) || (month == 10 && day <= 22),
     "hubristic ambition": () => (month == 10 && day >= 23) || (month == 11 && day <= 21),
     "ineffective irrelevance": () => (month == 11 && day >= 22) || (month == 12 && day <= 21),
   };
