@@ -48,18 +48,18 @@ function dateSubmissionHandler(dateString) {
   //dictionary for how zodiacs relate to lifelong struggles
   const zodiacStruggle = {
     //values are no-parameter arrow function expressions returning true based on the inputted date
-    "excessive inhibitions": () => (month == 12 && day >= 22) || (month == 1 && day <= 19),
+    "excessive inhibition": () => (month == 12 && day >= 22) || (month == 1 && day <= 19),
     "unwavering stubbornness": () => (month == 1 && day >= 20) || (month == 2 && day <= 18),
-    "blinding idolization": () => (month == 2 && day >= 19) || (month == 3 && day <= 20),
-    "unnecessary suffering": () => (month == 3 && day >= 21) || (month == 4 && day <= 19),
+    "unthinking obedience": () => (month == 2 && day >= 19) || (month == 3 && day <= 20),
+    "perpetual self-sacrifice": () => (month == 3 && day >= 21) || (month == 4 && day <= 19),
     "vacant directionlessness": () => (month == 4 && day >= 20) || (month == 5 && day <= 20),
     "bitter nihilism": () => (month == 5 && day >= 21) || (month == 6 && day <= 20),
     "overwhelming self-doubt": () => (month == 6 && day >= 21) || (month == 7 && day <= 22),
-    "codependent attachments": () => (month == 7 && day >= 23) || (month == 8 && day <= 22),
+    "unhealthy relationships": () => (month == 7 && day >= 23) || (month == 8 && day <= 22),
     "oppressive isolation": () => (month == 8 && day >= 23) || (month == 9 && day <= 22),
-    "compulsive masking": () => (month == 9 && day >= 23) || (month == 10 && day <= 22),
+    "incessant cageyness": () => (month == 9 && day >= 23) || (month == 10 && day <= 22),
     "hubristic ambition": () => (month == 10 && day >= 23) || (month == 11 && day <= 21),
-    "ineffective irrelevance": () => (month == 11 && day >= 22) || (month == 12 && day <= 21),
+    "effete irrelevance": () => (month == 11 && day >= 22) || (month == 12 && day <= 21),
   };
 
   //procedurally finds the key associated with the value equal to 'true'
@@ -68,22 +68,41 @@ function dateSubmissionHandler(dateString) {
   }
 }
 
-const thresholds = [85, 170, 255];
+const baseColors = [
+  [98, 98, 98],   // Gray
+  [161, 0, 0],    // Red
+  [161, 80, 0],   // Orange
+  [161, 161, 0],  // Yellow
+  [65, 102, 0],   // Green
+  [0, 129, 65],   // Dark Green
+  [0, 130, 130],  // Teal
+  [0, 86, 130],   // Blue
+  [0, 0, 86],     // Dark Blue
+  [43, 0, 87],    // Purple
+  [106, 0, 106],  // Dark Purple
+  [119, 0, 60]    // Magenta
+];
 
-function getRange(value) {
-  if (value <= thresholds[0]) return "low";
-  if (value <= thresholds[1]) return "med";
-  if (value <= thresholds[2]) return "high";
+function calculateDistance(color1, color2) {
+  const [r1, g1, b1] = color1;
+  const [r2, g2, b2] = color2;
+  return Math.sqrt(Math.pow(r2 - r1, 2) + Math.pow(g2 - g1, 2) + Math.pow(b2 - b1, 2));
 }
 
-function getColorBucket(RGB) {
-  //turn RGB into one of 27 buckets
-  const [r, g, b] = RGB;
-  const rRange = getRange(r);
-  const gRange = getRange(g);
-  const bRange = getRange(b);
-
-  return rRange + "-" + gRange + "-" + bRange;
+function categorizeColor(color) {
+  
+  let minDistance = Infinity;
+  let closestColorIndex = -1;
+  
+  for (let i = 0; i < baseColors.length; i++) {
+    const distance = calculateDistance(color, baseColors[i]);
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestColorIndex = i;
+    }
+  }
+  
+  return closestColorIndex;
 }
 
 function hexToRGB(hex) {
@@ -99,39 +118,24 @@ function hexToRGB(hex) {
 
 function colorSubmissionHandler(colorHEX) {
   const colorRGB = hexToRGB(colorHEX);
-  const colorBucket = getColorBucket(colorRGB);
-  //dictionary for how RGB relate to personality
-  const bucketPersona = {
-    "high-low-low": "mysterious and composed",
-    "high-med-med": "mysterious and composed",
-    "high-med-low": "earnest and humble",
-    "high-high-med": "earnest and humble",
-    "high-high-low": "acerbic and cynical",
-    "med-med-low": "acerbic and cynical",
-    "high-high-high": "acerbic and cynical",
-    "med-high-low": "playful and impish",
-    "low-med-low": "playful and impish",
-    "low-high-low": "outspoken and radical",
-    "med-high-med": "outspoken and radical",
-    "low-high-med": "gentle and dependable",
-    "med-high-high": "gentle and dependable",
-    "low-high-high": "zealous and principled",
-    "low-med-med": "zealous and principled",
-    "low-low-low": "zealous and principled",
-    "low-med-high": "performative and dramatic",
-    "low-low-med": "performative and dramatic",
-    "low-low-high": "rigid and deferential",
-    "med-med-high": "rigid and deferential",
-    "med-low-high": "whimsical and relaxed",
-    "high-med-high": "whimsical and relaxed",
-    "med-med-med": "whimsical and relaxed",
-    "high-low-high": "imperious and arrogant",
-    "med-low-med": "imperious and arrogant",
-    "high-low-med": "exuberant and rollicking",
-    "med-low-low": "exuberant and rollicking"
-  };
+  const colorIndex = categorizeColor(colorRGB);
+  //array for personality to be used with RGB array
+  const colorPersona = [
+    "outspoken and loyal",
+    "mysterious and composed",
+    "earnest and humble",
+    "acerbic and cynical",
+    "playful and mischievous",
+    "gentle and dependable",
+    "zealous and principled",
+    "performative and dramatic",
+    "rigid and deferential",
+    "whimsical and relaxed",
+    "imperious and arrogant",
+    "exuberant and rollicking"
+  ];
   
-  document.querySelector("#charPersona").innerText = bucketPersona[colorBucket];
+  document.querySelector("#charPersona").innerText = colorPersona[colorIndex];
 }
 
 function allFieldsFilledCheck() {
